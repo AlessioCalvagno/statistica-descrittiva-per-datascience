@@ -1,94 +1,95 @@
 #installazione
-install.packages("ggplot2")
+#install.packages("ggplot2")
+rm(list= ls())
 library(ggplot2)
 
 
-ggplot(dati)+
-  geometria_del_grafico(
-    estetiche(
-      x = variabile su asse x,
-      y = variabile su asse y,
-      col = variabile che regola il colore,
-    ),
-    parametri opzionali
-  )+
-  altra_geometria(...)+
-  personalizzazione_assi()+
-  tema()+
-  etc.etc()
+# ggplot(dati)+
+#   geometria_del_grafico(
+#     estetiche(
+#       x = variabile su asse x,
+#       y = variabile su asse y,
+#       col = variabile che regola il colore,
+#     ),
+#     parametri opzionali
+#   )+
+#   altra_geometria(...)+
+#   personalizzazione_assi()+
+#   tema()+
+#   etc.etc()
   
 
 
 
-setwd("C:/Users/dejan/Desktop")
+setwd("C:/Users/aless/Desktop/MASTER DATA SCIENCE/statistica-descrittiva-per-datascience/3 - Visualizzazioni con ggplot2")
 
-dati_tonni <- read.csv("tonni.csv",sep=";")
-lunghezza_cl <- cut(dati_tonni$LUNGHEZZA,
-                    breaks = c(10,15,20,25,30))
-N=dim(dati_tonni)[1]
-
-ni<-table(lunghezza_cl)
-fi<-ni/N
-Ni<-cumsum(ni)
-Fi<-Ni/N
-
-distr_freq<-as.data.frame(cbind(ni,fi,Ni,Fi))
-
-
-
-ggplot(data = distr_freq)+
-  geom_col(    
-    aes(x=rownames(distr_freq),
-        y=ni),
-    col="red",
-    fill="darkblue")+
-  labs(x="Lunghezza in classi",
-       y="Frequenze assolute",
-       title="Grafico a barre")+
-  theme_bw()+
-  scale_y_continuous(breaks = seq(0,10,1))
-
-
-
-dati_tonni$lunghezza_cl<-lunghezza_cl
-head(dati_tonni)
-
-ggplot(data = dati_tonni)+
-  geom_bar(
-    aes(x=lunghezza_cl),
-    stat = "count",
-    col="black")+
-  labs(x="Lunghezza in classi",
-       y="Frequenze assolute")+
-  theme_bw()+
-  scale_y_continuous(breaks = seq(0,10,1))
-
-
-ggplot(data = dati_tonni)+
-  geom_bar(
-    aes(x=lunghezza_cl,
-        fill=SESSO), #LOCALITÀ
-    position = "stack", #dodge #fill
-    col="black")+
-  labs(x="Lunghezza in classi",
-       y="Frequenze assolute")+
-  theme_bw()+
-  scale_y_continuous(breaks = seq(0,10,1))
-
-
-
-ggplot(data = dati_tonni)+
-  geom_bar(
-    aes(x=lunghezza_cl,
-        fill=LOCALITÀ), #LOCALITÀ
-    position = "stack", #dodge #fill 
-    col="black")+
-  labs(x="Lunghezza in classi",
-       y="Frequenze assolute")+
-  theme_bw()+
-  scale_y_continuous(breaks = seq(0,10,1))+
-  theme(legend.position = "bottom")
-
+# dati_tonni <- read.csv("tonni.csv",sep=";")
+# lunghezza_cl <- cut(dati_tonni$LUNGHEZZA,
+#                     breaks = c(10,15,20,25,30))
+# N=dim(dati_tonni)[1]
+# 
+# ni<-table(lunghezza_cl)
+# fi<-ni/N
+# Ni<-cumsum(ni)
+# Fi<-Ni/N
+# 
+# distr_freq<-as.data.frame(cbind(ni,fi,Ni,Fi))
+# 
+# 
+# 
+# ggplot(data = distr_freq)+
+#   geom_col(    
+#     aes(x=rownames(distr_freq),
+#         y=ni),
+#     col="red",
+#     fill="darkblue")+
+#   labs(x="Lunghezza in classi",
+#        y="Frequenze assolute",
+#        title="Grafico a barre")+
+#   theme_bw()+
+#   scale_y_continuous(breaks = seq(0,10,1))
+# 
+# 
+# 
+# dati_tonni$lunghezza_cl<-lunghezza_cl
+# head(dati_tonni)
+# 
+# ggplot(data = dati_tonni)+
+#   geom_bar(
+#     aes(x=lunghezza_cl),
+#     stat = "count",
+#     col="black")+
+#   labs(x="Lunghezza in classi",
+#        y="Frequenze assolute")+
+#   theme_bw()+
+#   scale_y_continuous(breaks = seq(0,10,1))
+# 
+# 
+# ggplot(data = dati_tonni)+
+#   geom_bar(
+#     aes(x=lunghezza_cl,
+#         fill=SESSO), #LOCALIT?
+#     position = "stack", #dodge #fill
+#     col="black")+
+#   labs(x="Lunghezza in classi",
+#        y="Frequenze assolute")+
+#   theme_bw()+
+#   scale_y_continuous(breaks = seq(0,10,1))
+# 
+# 
+# 
+# ggplot(data = dati_tonni)+
+#   geom_bar(
+#     aes(x=lunghezza_cl,
+#         fill=LOCALIT?), #LOCALIT?
+#     position = "stack", #dodge #fill 
+#     col="black")+
+#   labs(x="Lunghezza in classi",
+#        y="Frequenze assolute")+
+#   theme_bw()+
+#   scale_y_continuous(breaks = seq(0,10,1))+
+#   theme(legend.position = "bottom")
+# 
 
 
 #serie storiche

@@ -1,0 +1,7 @@
+https://rstudio-pubs-static.s3.amazonaws.com/3486_79191ad32cf74955b4502b8530aad627.html
+
+https://cran.r-project.org/web/packages/colorspace/vignettes/colorspace.html
+
+https://www.datanovia.com/en/blog/ggplot-themes-gallery/
+
+https://r-graph-gallery.com/index.html

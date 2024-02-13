@@ -64,9 +64,9 @@ summary(Petal.Length)
 summary(iris)
 
 #media ponderata
-distr_freq$xCi <- seq(0.5,6.5,1)
+distr_freq$xCi <- seq(0.5,6.5,1) #valori centrali di intervalli
 
-distr_freq$xCi * distr_freq$ni
+distr_freq$xCi * distr_freq$ni #freq. assolute sono i pesi
 
 sum(distr_freq$xCi*distr_freq$ni) / sum(distr_freq$ni)
 

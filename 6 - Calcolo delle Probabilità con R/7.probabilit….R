@@ -1,7 +1,7 @@
 library(ggplot2)
 
 
-dado <- c(1,2,3,4,5,6)
+dado <- c(1,2,3,4,5,6) #questo è il dominio della f. di probabilità
 sample(dado,1)
 lanci <- sample(dado,36,replace = T)
 
